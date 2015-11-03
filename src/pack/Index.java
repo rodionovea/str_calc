@@ -388,7 +388,7 @@ public class Index extends JFrame{
     	    				} else {ver=0;};	
     	    			/* проверка правильно ли ввели данные в поля для ввода */
     	    		} else if  (sistema_5_int==1) {
-    	    			if (isValidInput(Pokaz_stoim_text, "цену нового имущества")) {ver=1;} else {ver=0;};	
+    	    			if (isValidInput(Stoim_im_text, "цену нового имущества")) {ver=1;} else {ver=0;};	
         	    			/* проверка правильно ли ввели данные в поля для ввода */
         	    	}   	
     	    		
