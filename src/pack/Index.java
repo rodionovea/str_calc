@@ -311,7 +311,27 @@ public class Index extends JFrame{
 					}
 			}                                                       
     	   });
-    	   
+    	   		sistema_5.addItemListener(new ItemListener(){   /*Для компонента флажок устанавливаем слушатель события                                                        
+			Если нажать на компонент - сработает проверка выбран флажок или снят */                                                     
+			public void itemStateChanged(ItemEvent e) 
+			/*. В теле метода itemStateChanged располагается код, который выполняется при смене состояния флажка. */
+			{
+				if (e.getSource()==sistema_5)//если событие произошло именно с флажком sistema_5, то выполняется следующее
+					if(e.getStateChange()==1){ /* Если данный компонент флажок включен (==1), то это означает что выбрана 
+					система восстановительной стоимости (пятая)  */
+						sistema_5_int=1; //переменная которая отвечает за то выбрана пятая система или нет
+						Stoim_im_text.setEditable(true);
+						sistema_1.setSelected(false);
+						sistema_2.setSelected(false);
+						sistema_3.setSelected(false);
+						sistema_4.setSelected(false);
+						}
+					else { //если флажок выключен, то значит пятая система не выбрана
+						sistema_5_int=0;//переменная которая отвечает за то выбрана пятая система или нет
+						Stoim_im_text.setEditable(false);
+					}
+			}                                                       
+    	   });
     		button_1.addActionListener(new ActionListener()   
     			/* 	Sost_smetu - кнопка Составить смету
     	 		"."  - указывает к какой переменной (кнопке) следует применить слушателя.
