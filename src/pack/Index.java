@@ -240,6 +240,30 @@ public class Index extends JFrame{
 			}                                                       
     	   }); 		
 		
+		sistema_2.addItemListener(new ItemListener(){   /*Для компонента флажок устанавливаем слушатель события                                                        
+			Если нажать на компонент - сработает проверка выбран флажок или снят */                                                     
+			public void itemStateChanged(ItemEvent e) 
+			/*. В теле метода itemStateChanged располагается код, который выполняется при смене состояния флажка. */
+			{
+				if (e.getSource()==sistema_2)//если событие произошло именно с флажком sistema_2, то выполняется следующее
+					if(e.getStateChange()==1){ /* Если данный компонент флажок включен (==1), то это означает что выбрана 
+					система пропорциональной ответственности (вторая)  */
+						sistema_2_int=1; //переменная которая отвечает за то выбрана вторая система или нет
+						Str_sum_text.setEditable(true);
+						Stoim_oc_text.setEditable(true);
+						sistema_1.setSelected(false);
+						sistema_3.setSelected(false);
+						sistema_4.setSelected(false);
+						sistema_5.setSelected(false);
+						}
+					else { //если флажок выключен, то значит вторая система не выбрана
+						sistema_2_int=0;//переменная которая отвечает за то выбрана вторая система или нет
+						Str_sum_text.setEditable(false);
+						Stoim_oc_text.setEditable(false);
+					}
+			}                                                       
+    	   });
+    	   
 	//проверка данных, введенных пользователем
     public static boolean isValidInput(JTextField jtxt, String description) {
 
