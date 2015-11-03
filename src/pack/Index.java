@@ -263,6 +263,55 @@ public class Index extends JFrame{
 					}
 			}                                                       
     	   });
+    	   
+    	   	sistema_3.addItemListener(new ItemListener(){   /*Для компонента флажок устанавливаем слушатель события                                                        
+			Если нажать на компонент - сработает проверка выбран флажок или снят */                                                     
+			public void itemStateChanged(ItemEvent e) 
+			/*. В теле метода itemStateChanged располагается код, который выполняется при смене состояния флажка. */
+			{
+				if (e.getSource()==sistema_3)//если событие произошло именно с флажком sistema_3, то выполняется следующее
+					if(e.getStateChange()==1){ /* Если данный компонент флажок включен (==1), то это означает что выбрана 
+					система первого риска (третья)  */
+						sistema_3_int=1; //переменная которая отвечает за то выбрана третья система или нет
+						Str_sum_text.setEditable(true);
+						sistema_1.setSelected(false);
+						sistema_2.setSelected(false);
+						sistema_4.setSelected(false);
+						sistema_5.setSelected(false);
+						}
+					else { //если флажок выключен, то значит третья система не выбрана
+						sistema_3_int=0;//переменная которая отвечает за то выбрана третья система или нет
+						Str_sum_text.setEditable(false);
+					}
+			}                                                       
+    	   });
+		
+		sistema_4.addItemListener(new ItemListener(){   /*Для компонента флажок устанавливаем слушатель события                                                        
+			Если нажать на компонент - сработает проверка выбран флажок или снят */                                                     
+			public void itemStateChanged(ItemEvent e) 
+			/*. В теле метода itemStateChanged располагается код, который выполняется при смене состояния флажка. */
+			{
+				if (e.getSource()==sistema_4)//если событие произошло именно с флажком sistema_4, то выполняется следующее
+					if(e.getStateChange()==1){ /* Если данный компонент флажок включен (==1), то это означает что выбрана 
+					система дробной части (четвертая)  */
+						sistema_4_int=1; //переменная которая отвечает за то выбрана четвертая система или нет
+						Pokaz_stoim_text.setEditable(true);
+						Stoim_oc_text.setEditable(true);
+						Str_sum_text.setEditable(true);
+						sistema_1.setSelected(false);
+						sistema_2.setSelected(false);
+						sistema_3.setSelected(false);
+						sistema_5.setSelected(false);
+						}
+					else { //если флажок выключен, то значит четвертая система не выбрана
+						sistema_4_int=0;//переменная которая отвечает за то выбрана четвертая система или нет
+						Pokaz_stoim_text.setEditable(false);
+						Stoim_oc_text.setEditable(false);
+						Str_sum_text.setEditable(false);
+					}
+			}                                                       
+    	   });
+    	   
     		button_1.addActionListener(new ActionListener()   
     			/* 	Sost_smetu - кнопка Составить смету
     	 		"."  - указывает к какой переменной (кнопке) следует применить слушателя.
